@@ -2,7 +2,8 @@ import sys,json,time,numpy as np,pandas as pd,torch,torch.nn as nn
 from transformers import AutoTokenizer,AutoModel,get_linear_schedule_with_warmup
 from common import *
 name=sys.argv[1]; tag=sys.argv[2]; EP=int(sys.argv[3]) if len(sys.argv)>3 else 3
-torch.manual_seed(0); np.random.seed(0)
+SEED=int(sys.argv[4]) if len(sys.argv)>4 else 0
+torch.manual_seed(SEED); np.random.seed(SEED)
 tr,te=load()
 dev=tr.sample(frac=0.05,random_state=0); tr=tr.drop(dev.index).reset_index(drop=True); dev=dev.reset_index(drop=True)
 tok=AutoTokenizer.from_pretrained(name)

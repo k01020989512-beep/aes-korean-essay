@@ -2,3 +2,8 @@ __pycache__/
 *.pt
 essays.csv
 nohup.out
+r?.png
+llm/batch_*.json
+llm/rubric*.json
+llm/fewshot_examples.json
+llm/old_norubric/
