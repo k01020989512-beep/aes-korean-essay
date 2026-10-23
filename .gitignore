@@ -1,0 +1,4 @@
+__pycache__/
+*.pt
+essays.csv
+nohup.out
